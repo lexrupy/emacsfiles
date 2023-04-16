@@ -6,7 +6,7 @@
     (progn
       ;; if graphic mode
       (tool-bar-mode nil)
-      (scrool-bar-mode -1)
+      (scrol-bar-mode -1)
       (set-face-attribute 'default nil :height 141 :family "agave Nerd Font Mono")
       (add-to-list 'default-frame-alist '(height . 28))
       (add-to-list 'default-frame-alist '(width . 100))
