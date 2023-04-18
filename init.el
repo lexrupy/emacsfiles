@@ -1,20 +1,20 @@
 (setq inhibit-startup-message t)
-(setq default-directory "~/projetos/")
+(setq default-directory "~/projects/")
 (setq make-backup-files nil)
 
 (if (display-graphic-p)
     (progn
       ;; if graphic mode
-      (tool-bar-mode nil)
-      (scrol-bar-mode -1)
-      (set-face-attribute 'default nil :height 141 :family "agave Nerd Font Mono")
+      (tool-bar-mode -1)
+      (scroll-bar-mode -1)
+      (set-face-attribute 'default nil :height 120 :family "JetBrains Mono")
       (add-to-list 'default-frame-alist '(height . 28))
       (add-to-list 'default-frame-alist '(width . 100))
       (add-to-list 'default-frame-alist '(top . 20))
       (add-to-list 'default-frame-alist '(left . 200))
       ))
 
-; (menu-bar-mode -1)
+(menu-bar-mode -1)
 (global-linum-mode t)
 (electric-pair-mode t)
 (delete-selection-mode 1)
@@ -81,16 +81,18 @@
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
-;(use-package gruvbox-theme
-;  :ensure t)
+;(use-package gruvbox-theme :ensure t :config (load-theme 'gruvbox t))
+;(use-package railscasts-theme :ensure t :config (load-theme 'railscasts t))
+(use-package monokai-theme :ensure t :config (load-theme 'monokai t))
+;(use-package rebecca-theme :ensure t :config (load-theme 'rebecca t))
 
-;(use-package railscasts-theme
-;  :ensure t)
 
-(use-package monokai-theme
-  :ensure t)
 
-(load-theme 'monokai t)
+
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode t))
+
 
 ;; Custom Short-Cuts
 (global-set-key (kbd "C-<tab>") 'other-window)
@@ -105,8 +107,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   (quote
-    (gruvbox ace-window neotree all-the-icons auto-complete wich-key try use-package))))
+   '(gruvbox-theme gruvbox ace-window neotree all-the-icons auto-complete wich-key try use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
