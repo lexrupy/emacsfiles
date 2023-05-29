@@ -1,3 +1,5 @@
+;;; package -- Personal Init.el
+
 (setq inhibit-startup-message t)
 (setq default-directory "~/projects/")
 (setq make-backup-files nil)
@@ -7,7 +9,7 @@
       ;; if graphic mode
       (tool-bar-mode -1)
       (scroll-bar-mode -1)
-      (set-face-attribute 'default nil :height 120 :family "JetBrains Mono")
+      (set-face-attribute 'default nil :height 160 :family "Agave Nerd Font Mono")
       (add-to-list 'default-frame-alist '(height . 28))
       (add-to-list 'default-frame-alist '(width . 100))
       (add-to-list 'default-frame-alist '(top . 20))
@@ -40,7 +42,7 @@
 	     :ensure t
 	     :config
 	     (progn
-	       (which-key-setup-side-window-right-bottom)
+;;	       (which-key-setup-side-window-right-bottom)
 	       (which-key-mode)))
 
 (use-package auto-complete
@@ -83,8 +85,8 @@
 
 ;(use-package gruvbox-theme :ensure t :config (load-theme 'gruvbox t))
 ;(use-package railscasts-theme :ensure t :config (load-theme 'railscasts t))
-(use-package monokai-theme :ensure t :config (load-theme 'monokai t))
-;(use-package rebecca-theme :ensure t :config (load-theme 'rebecca t))
+;(use-package monokai-theme :ensure t :config (load-theme 'monokai t))
+(use-package rebecca-theme :ensure t :config (load-theme 'rebecca t))
 
 
 
@@ -107,10 +109,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(gruvbox-theme gruvbox ace-window neotree all-the-icons auto-complete wich-key try use-package)))
+   '(ace-window neotree all-the-icons auto-complete wich-key try use-package))
+ '(warning-suppress-types '((comp) (comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+;;; init.el ends here
